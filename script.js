@@ -30,7 +30,7 @@ form.addEventListener('submit', (e) => {
         e.preventDefault();
         firstName_error.textContent = "First name is required";
         firstName.parentNode.classList.add('error');
-        firstName.nextElementSibling.style.top = '53%';
+        firstName.nextElementSibling.style.top = '54%';
         isValid = false;
     } else {
         firstName_error.textContent = "";
@@ -41,7 +41,7 @@ form.addEventListener('submit', (e) => {
     if (lastName.value.trim() === '') {
         e.preventDefault();
         lastName_error.textContent = "Last name is required";
-        lastName.nextElementSibling.style.top = '53%';
+        lastName.nextElementSibling.style.top = '54%';
         lastName.parentNode.classList.add('error');
         isValid = false;
     } else {
@@ -53,7 +53,7 @@ form.addEventListener('submit', (e) => {
     if (birthday.value.trim() === '') {
         e.preventDefault();
         birthday_error.textContent = "Birthday is required";
-        birthday.nextElementSibling.style.top = '53%';
+        birthday.nextElementSibling.style.top = '54%';
         birthday.parentNode.classList.add('error');
         isValid = false;
     } else {
@@ -75,7 +75,7 @@ form.addEventListener('submit', (e) => {
     if (emailAddress.value === '' || !isEmailValid(emailAddress.value)) {
         valid = false;
         emailAddress_error.textContent = "Valid email is required";
-        emailAddress.nextElementSibling.style.top = '53%';
+        emailAddress.nextElementSibling.style.top = '54%';
         emailAddress.parentNode.classList.add('error');
     } else {
         emailAddress_error.textContent = "";
@@ -86,7 +86,7 @@ form.addEventListener('submit', (e) => {
     if (password.value === '' || password.value.length < 6) {
         valid = false;
         password_error.textContent = "Password must be at least 6 characters";
-        password.nextElementSibling.style.top = '53%';
+        password.nextElementSibling.style.top = '52%';
         password.parentNode.classList.add('error');
     } else {
         password_error.textContent = "";
@@ -97,7 +97,7 @@ form.addEventListener('submit', (e) => {
     if (confirmPassword.value !== password.value) {
         isValid = false;
         confirmPassword_error.textContent = "Passwords do not match";
-        confirmPassword.nextElementSibling.style.top = '53%';
+        confirmPassword.nextElementSibling.style.top = '54%';
         confirmPassword.parentNode.classList.add('error');
     } else {
         confirmPassword_error.textContent = "";
