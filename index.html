@@ -1,83 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>Registration Form</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <form id="form" method="post" action="registration.php">
-            <h1>REGISTRATION</h1>
+      <form
+        id="form"
+        method="post"
+        action="registration.php"
+        onsubmit="return Validate()"
+      >
+        <h1>REGISTRATION</h1>
 
-            <div class="input-box">
+        <div class="input-box">
+          <div class="input-field">
+            <label for="firstName">FIRST NAME</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="First Name..."
+            />
+            <i class="bx bxs-user"></i>
+            <span class="error" id="firstName_error"></span>
+          </div>
 
-                <div class="input-field">
-                    <label for="firstName">FIRST NAME</label>
-                    <input type="text" id="firstName" name="firstName" placeholder="First Name...">
-                    <i class='bx bxs-user'></i>
-                    <span class="error" id="firstName_error"></span>
-                </div>
+          <div class="input-field">
+            <label for="lastName">LAST NAME</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Last Name..."
+            />
+            <i class="bx bxs-user"></i>
+            <span class="error" id="lastName_error"></span>
+          </div>
 
-                <div class="input-field">
-                    <label for="lastName">LAST NAME</label>
-                    <input type="text" id="lastName" name="lastName" placeholder="Last Name...">
-                    <i class='bx bxs-user'></i>
-                    <span class="error" id="lastName_error"></span>
-                </div>
-
-                <div class="BG-container">
-                    <div class="input-field">
-                        <label for="birthday">BIRTHDAY</label>
-                        <input type="date" id="birthday" name="birthday" placeholder="Birthday" style="color: white; font-family: 'Freeman', monospace; letter-spacing: 0.5px;">
-                        <span class="error" id="birthday_error"></span>
-                    </div>
-    
-                    <div class="input-field">
-                        <label for="gender">GENDER</label>
-                        <div class="gender" id="gender"> 
-                            <label for="male" class="radio">Male
-                                <input type="radio" id="male" name="gender" value="Male"/>
-                                <span class="checkmark"></span>
-                            </label>
-                            <label for="female" class="radio">Female
-                                <input type="radio" id="female" name="gender" value="Female"/>
-                                <span class="checkmark"></span> 
-                            </label> 
-                        </div>
-                        <span class="error" id="gender_error"></span>
-                    </div>
-                </div>
-                
-                <div class="input-field">
-                    <label for="emailAddress">EMAIL ADDRESS</label>
-                    <input type="text" id="emailAddress" name="email" placeholder="Ex: sample@gmail.com">
-                    <i class='bx bxs-envelope'></i>
-                    <span class="error" id="emailAddress_error"></span>
-                </div>
-
-                <div class="input-field">
-                    <label for="password">PASSWORD</label>
-                    <input type="password" id="password" name="password">
-                    <i class='bx bxs-lock-alt'></i>
-                    <span class="error" id="password_error"></span>
-                </div>
-
-                <div class="input-field">
-                    <label for="confirmPassword">CONFIRM PASSWORD</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword">
-                    <i class='bx bxs-lock-alt'></i>
-                    <span class="error" id="confirmPassword_error"></span>
-                </div>
-                
+          <div class="BG-container">
+            <div class="input-field">
+              <label for="birthday">BIRTHDAY</label>
+              <input
+                type="date"
+                id="birthday"
+                name="birthday"
+                placeholder="Birthday"
+                style="
+                  color: white;
+                  font-family: 'Freeman', monospace;
+                  letter-spacing: 0.5px;
+                "
+              />
+              <span class="error" id="birthday_error"></span>
             </div>
-            
-            <button type="submit" class="btn" onclick="openPopup">Register</button>
-        </form>
+
+            <div class="input-field">
+              <label for="gender">GENDER</label>
+              <div class="gender" id="gender">
+                <label for="male" class="radio"
+                  >Male
+                  <input type="radio" id="male" name="gender" value="Male" />
+                  <span class="checkmark"></span>
+                </label>
+                <label for="female" class="radio"
+                  >Female
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="Female"
+                  />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <span class="error" id="gender_error"></span>
+            </div>
+          </div>
+
+          <div class="input-field">
+            <label for="emailAddress">EMAIL ADDRESS</label>
+            <input
+              type="text"
+              id="emailAddress"
+              name="email"
+              placeholder="Ex: sample@gmail.com"
+            />
+            <i class="bx bxs-envelope"></i>
+            <span class="error" id="emailAddress_error"></span>
+          </div>
+
+          <div class="input-field">
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password" />
+            <i class="bx bxs-lock-alt"></i>
+            <span class="error" id="password_error"></span>
+          </div>
+
+          <div class="input-field">
+            <label for="confirmPassword">CONFIRM PASSWORD</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+            />
+            <i class="bx bxs-lock-alt"></i>
+            <span class="error" id="confirmPassword_error"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn" onclick="openPopup">Register</button>
+      </form>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
