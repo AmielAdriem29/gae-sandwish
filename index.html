@@ -28,26 +28,27 @@
                     <span class="error" id="lastName_error"></span>
                 </div>
 
-                <div class="input-field">
-                    <label for="birthday">BIRTHDAY</label>
-                    <input type="date" id="birthday" name="birthday" placeholder="Birthday" style="color: white;">
-                    <i class='bx bxs-calendar'></i>
-                    <span class="error" id="birthday_error"></span>
-                </div>
-
-                <div class="input-field">
-                    <label for="gender">GENDER</label>
-                    <div class="gender" id="gender"> 
-                        <label for="male" class="radio">Male
-                            <input type="radio" id="male" name="gender" value="male"/>
-                            <span class="checkmark"></span>
-                        </label>
-                        <label for="female" class="radio">Female
-                            <input type="radio" id="female" name="gender" value="female"/>
-                            <span class="checkmark"></span> 
-                        </label> 
+                <div class="BG-container">
+                    <div class="input-field">
+                        <label for="birthday">BIRTHDAY</label>
+                        <input type="date" id="birthday" name="birthday" placeholder="Birthday" style="color: white; font-family: 'Freeman', monospace; letter-spacing: 0.5px;">
+                        <span class="error" id="birthday_error"></span>
                     </div>
-                    <span class="error" id="gender_error"></span>
+    
+                    <div class="input-field">
+                        <label for="gender">GENDER</label>
+                        <div class="gender" id="gender"> 
+                            <label for="male" class="radio">Male
+                                <input type="radio" id="male" name="gender" value="Male"/>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label for="female" class="radio">Female
+                                <input type="radio" id="female" name="gender" value="Female"/>
+                                <span class="checkmark"></span> 
+                            </label> 
+                        </div>
+                        <span class="error" id="gender_error"></span>
+                    </div>
                 </div>
                 
                 <div class="input-field">
@@ -73,7 +74,7 @@
                 
             </div>
             
-            <button type="submit" class="btn">Register</button>
+            <button type="submit" class="btn" onclick="openPopup">Register</button>
         </form>
     </div>
 

@@ -1,4 +1,3 @@
-
 const form = document.getElementById('form');
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
@@ -17,20 +16,14 @@ const emailAddress_error = document.getElementById('emailAddress_error');
 const password_error = document.getElementById('password_error');
 const confirmPassword_error = document.getElementById('confirmPassword_error');
 
-function isEmailValid(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
-}
-
 
 form.addEventListener('submit', (e) => {
     let isValid = true;
 
     if (firstName.value.trim() === '') {
-        e.preventDefault();
         firstName_error.textContent = "First name is required";
         firstName.parentNode.classList.add('error');
-        firstName.nextElementSibling.style.top = '54%';
+        firstName.nextElementSibling.style.top = '55%';
         isValid = false;
     } else {
         firstName_error.textContent = "";
@@ -39,9 +32,8 @@ form.addEventListener('submit', (e) => {
     }
 
     if (lastName.value.trim() === '') {
-        e.preventDefault();
         lastName_error.textContent = "Last name is required";
-        lastName.nextElementSibling.style.top = '54%';
+        lastName.nextElementSibling.style.top = '55%';
         lastName.parentNode.classList.add('error');
         isValid = false;
     } else {
@@ -51,9 +43,8 @@ form.addEventListener('submit', (e) => {
     }
 
     if (birthday.value.trim() === '') {
-        e.preventDefault();
         birthday_error.textContent = "Birthday is required";
-        birthday.nextElementSibling.style.top = '54%';
+        birthday.nextElementSibling.style.top = '55%';
         birthday.parentNode.classList.add('error');
         isValid = false;
     } else {
@@ -63,7 +54,6 @@ form.addEventListener('submit', (e) => {
     }
     
     if (!genderMale.checked && !genderFemale.checked) {
-        e.preventDefault();
         gender_error.innerHTML = "Gender is required";
         document.getElementById('gender').classList.add('error'); 
         isValid = false;
@@ -72,11 +62,11 @@ form.addEventListener('submit', (e) => {
         document.getElementById('gender').classList.remove('error');
     }
 
-    if (emailAddress.value === '' || !isEmailValid(emailAddress.value)) {
-        valid = false;
+    if (emailAddress.value === '' || (!emailAddress.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/))) {
         emailAddress_error.textContent = "Valid email is required";
-        emailAddress.nextElementSibling.style.top = '54%';
+        emailAddress.nextElementSibling.style.top = '56%';
         emailAddress.parentNode.classList.add('error');
+        isValid = false;
     } else {
         emailAddress_error.textContent = "";
         emailAddress.parentNode.classList.remove('error');
@@ -84,10 +74,10 @@ form.addEventListener('submit', (e) => {
     }
 
     if (password.value === '' || password.value.length < 6) {
-        valid = false;
         password_error.textContent = "Password must be at least 6 characters";
-        password.nextElementSibling.style.top = '52%';
+        password.nextElementSibling.style.top = '54%';
         password.parentNode.classList.add('error');
+        isValid = false;
     } else {
         password_error.textContent = "";
         password.parentNode.classList.remove('error');
@@ -95,17 +85,13 @@ form.addEventListener('submit', (e) => {
     }
 
     if (confirmPassword.value !== password.value) {
-        isValid = false;
         confirmPassword_error.textContent = "Passwords do not match";
         confirmPassword.nextElementSibling.style.top = '54%';
         confirmPassword.parentNode.classList.add('error');
+        isValid = false;
     } else {
         confirmPassword_error.textContent = "";
         confirmPassword.parentNode.classList.remove('error');
         confirmPassword.nextElementSibling.style.top = '67%';
-    }
-
-    if (!isValid) {
-        e.preventDefault();
     }
 });
